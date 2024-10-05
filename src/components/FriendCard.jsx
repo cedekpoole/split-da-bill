@@ -1,6 +1,6 @@
 export default function FriendCard({ friend }) {
   return (
-    <div className="flex bg-white shadow-md rounded-lg p-4 max-w-xs items-center">
+    <div className="flex bg-white shadow-md rounded-lg px-1 max-w-xs items-center">
       <img
         src={friend.image}
         alt={friend.name}
