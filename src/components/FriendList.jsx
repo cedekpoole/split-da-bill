@@ -4,6 +4,12 @@ import FriendForm from "./FriendForm";
 
 export default function FriendList({ friends, setFriends }) {
   const [addFriend, setAddFriend] = useState(false);
+
+  const removeFriend = (id) => {
+    const updatedFriends = friends.filter((friend) => friend.id !== id);
+    setFriends(updatedFriends);
+  };
+
   return (
     <>
       <div className="flex flex-col gap-4 mb-4">
@@ -14,7 +20,11 @@ export default function FriendList({ friends, setFriends }) {
           </p>
         )}
         {friends.map((friend) => (
-          <FriendCard key={friend.id} friend={friend} setFriends={setFriends} />
+          <FriendCard
+            key={friend.id}
+            friend={friend}
+            removeFriend={removeFriend}
+          />
         ))}
       </div>
       {addFriend ? (
