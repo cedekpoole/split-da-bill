@@ -17,11 +17,6 @@ const fakeFriends = [
     name: "John Smith",
     image: "https://randomuser.me/api",
   },
-  {
-    id: 4,
-    name: "Jane Smith",
-    image: "https://randomuser.me/api",
-  },
 ];
 
 function App() {
