@@ -1,6 +1,6 @@
 export default function FriendCard({ friend }) {
   return (
-    <div className="flex bg-white shadow-md rounded-lg px-1 max-w-xs items-center">
+    <div className="flex bg-white shadow-md rounded-lg px-1 items-center">
       <img
         src={friend.image}
         alt={friend.name}
@@ -11,7 +11,7 @@ export default function FriendCard({ friend }) {
         <p>{`£${friend.total} is owed`}</p>
       </div>
       <button className="ml-auto border rounded-full w-10 h-10 hover:bg-blue-500 hover:text-[#f1f1f1]">
-        +
+        🗑️
       </button>
     </div>
   );

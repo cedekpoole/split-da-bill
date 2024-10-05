@@ -29,7 +29,7 @@ export default function FriendForm({
   };
 
   return (
-    <div className="bg-[#f1f1f1] shadow-md rounded-lg max-w-xs flex flex-col">
+    <div className="bg-[#f1f1f1] shadow-md rounded-lg flex flex-col">
       <div
         className="text-end text-2xl mr-3 cursor-pointer"
         onClick={() => setAddFriend(!addFriend)}

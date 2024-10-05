@@ -9,12 +9,12 @@ export default function FriendList({ friends, setFriends }) {
       <div className="flex flex-col gap-4 mb-4">
         <h2 className="text-2xl ">Friends List</h2>
         {friends.length === 0 && (
-          <p className="text-center text-lg mt-4 max-w-xs shadow-md p-4">
+          <p className="text-center text-lg mt-4 shadow-md p-4">
             No friends to display 😢 Add a friend to get started!
           </p>
         )}
         {friends.map((friend) => (
-          <FriendCard key={friend.id} friend={friend} />
+          <FriendCard key={friend.id} friend={friend} setFriends={setFriends} />
         ))}
       </div>
       {addFriend ? (
@@ -25,7 +25,7 @@ export default function FriendList({ friends, setFriends }) {
           setAddFriend={setAddFriend}
         />
       ) : (
-        <div className="py-2 flex justify-end max-w-xs">
+        <div className="py-2 flex justify-end">
           <button
             className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-36"
             onClick={() => setAddFriend(!addFriend)}
