@@ -7,9 +7,10 @@ export default function FriendList({ friends, setFriends }) {
   return (
     <>
       <div className="flex flex-col gap-4 mb-4">
+        <h2 className="text-2xl ">Friends List</h2>
         {friends.length === 0 && (
-          <p className="text-center text-lg font-semibold mt-4 max-w-xs border shadow-md">
-            No friends to display
+          <p className="text-center text-lg mt-4 max-w-xs shadow-md p-4">
+            No friends to display 😢 Add a friend to get started!
           </p>
         )}
         {friends.map((friend) => (
