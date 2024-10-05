@@ -17,7 +17,12 @@ export default function FriendList({ friends, setFriends }) {
         ))}
       </div>
       {addFriend ? (
-        <FriendForm friends={friends} setFriends={setFriends} />
+        <FriendForm
+          friends={friends}
+          setFriends={setFriends}
+          addFriend={addFriend}
+          setAddFriend={setAddFriend}
+        />
       ) : (
         <div className="py-2 flex justify-end max-w-xs">
           <button
