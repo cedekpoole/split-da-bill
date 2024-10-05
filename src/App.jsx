@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FriendForm from "./components/FriendForm";
+import FriendList from "./components/FriendList";
 
 const fakeFriends = [
   {
@@ -29,8 +29,10 @@ function App() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold text-center my-4">Split Da Bill</h1>
-      <FriendForm friends={friends} setFriends={setFriends} />
+      <div className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold text-center my-4">Split Da Bill</h1>
+        <FriendList friends={friends} setFriends={setFriends} />
+      </div>
     </>
   );
 }
