@@ -40,7 +40,7 @@ function App() {
     <>
       <div className="min-h-screen bg-slate-100">
         <div className="container mx-auto p-4 font-poppins">
-          <h1 className="text-5xl font-bold text-center my-4 font-abril">
+          <h1 className="text-5xl font-bold text-center mt-5 mb-10 font-abril">
             Split Da Bill
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
