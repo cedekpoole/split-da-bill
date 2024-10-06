@@ -34,7 +34,7 @@ function App() {
           <div className="md:col-span-1">
             <FriendList friends={friends} setFriends={setFriends} />
           </div>
-          <div className="md:col-span-1 large:col-span-2">
+          <div className="md:col-span-1 lg:col-span-2 border">
             <BillForm friends={friends} setFriends={setFriends} />
           </div>
         </div>
