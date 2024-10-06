@@ -29,8 +29,8 @@ export default function FriendForm({
   };
 
   return (
-    <div className="bg-[#f1f1f1] shadow-md rounded-lg flex flex-col">
-      <div className="text-end mr-3 ">
+    <div className="bg-slate-300 shadow-md rounded-lg flex flex-col">
+      <div className="text-end mr-4 mt-2">
         <span
           className="text-2xl cursor-pointer"
           onClick={() => setAddFriend(!addFriend)}
@@ -39,28 +39,28 @@ export default function FriendForm({
         </span>
       </div>
       <form className="flex flex-col space-y-4 p-4" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name" className="text-lg font-semibold mr-4">
+        <div className="flex justify-start items-center">
+          <label htmlFor="name" className="text-md font-semibold mr-3">
             Name:
           </label>
           <input
             name="name"
             type="text"
-            className="border rounded px-4 py-2"
+            className="border rounded px-4 py-1"
             placeholder="Enter friend's name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="image" className="text-lg font-semibold mr-4">
+        <div className="flex justify-start items-center">
+          <label htmlFor="image" className="text-md font-semibold mr-3">
             Image:
           </label>
           <input
             name="image"
             type="url"
-            className="border rounded px-4 py-2"
+            className="border rounded px-4 py-1"
             placeholder="Enter image url"
             value={image}
             onChange={(e) => setImage(e.target.value)}
