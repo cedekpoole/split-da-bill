@@ -41,7 +41,7 @@ export default function FriendForm({
       <form className="flex flex-col space-y-3 p-4" onSubmit={handleSubmit}>
         <div className="flex justify-start items-center">
           <label htmlFor="name" className="text-md font-semibold mr-3">
-            Name:
+            Name*
           </label>
           <input
             name="name"
@@ -55,7 +55,7 @@ export default function FriendForm({
         </div>
         <div className="flex justify-start items-center">
           <label htmlFor="image" className="text-md font-semibold mr-3">
-            Image:
+            Avatar
           </label>
           <input
             name="image"
