@@ -14,7 +14,7 @@ export default function FriendCard({
       <img
         src={friend.image}
         alt={friend.name}
-        className="rounded-full w-16 mb-4"
+        className="rounded-full w-16 my-2"
       />
       <div className="flex flex-col ml-4">
         <h2 className="text-xl font-semibold">{friend.name}</h2>
