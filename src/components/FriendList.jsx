@@ -2,28 +2,36 @@ import { useState } from "react";
 import FriendCard from "./FriendCard";
 import FriendForm from "./FriendForm";
 
-export default function FriendList({ friends, setFriends }) {
+export default function FriendList({
+  friends,
+  setFriends,
+  selectedFriend,
+  setSelectedFriend,
+}) {
   const [addFriend, setAddFriend] = useState(false);
 
   const removeFriend = (id) => {
     const updatedFriends = friends.filter((friend) => friend.id !== id);
     setFriends(updatedFriends);
+    setSelectedFriend(null);
   };
 
   return (
     <>
       <div className="flex flex-col gap-4 mb-4">
         <h2 className="text-2xl ">Friends List</h2>
-        {friends.length === 0 && (
+        {friends?.length === 0 && (
           <p className="text-center text-lg mt-4 shadow-md p-4">
             No friends to display 😢 Add a friend to get started!
           </p>
         )}
-        {friends.map((friend) => (
+        {friends?.map((friend) => (
           <FriendCard
             key={friend.id}
             friend={friend}
             removeFriend={removeFriend}
+            setSelectedFriend={setSelectedFriend}
+            selectedFriend={selectedFriend}
           />
         ))}
       </div>

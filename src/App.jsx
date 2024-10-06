@@ -25,6 +25,16 @@ const fakeFriends = [
 
 function App() {
   const [friends, setFriends] = useState(fakeFriends);
+  const [selectedFriend, setSelectedFriend] = useState(null);
+
+  const updateFriendTotal = (id, amount) => {
+    setFriends((prevFriends) =>
+      prevFriends.map((friend) =>
+        friend.id === id ? { ...friend, total: friend.total + amount } : friend
+      )
+    );
+    setSelectedFriend(null);
+  };
 
   return (
     <>
@@ -32,10 +42,20 @@ function App() {
         <h1 className="text-2xl font-bold text-center my-4">Split Da Bill</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
           <div className="md:col-span-1">
-            <FriendList friends={friends} setFriends={setFriends} />
+            <FriendList
+              friends={friends}
+              setFriends={setFriends}
+              selectedFriend={selectedFriend}
+              setSelectedFriend={setSelectedFriend}
+            />
           </div>
           <div className="md:col-span-1 lg:col-span-2 border">
-            <BillForm friends={friends} setFriends={setFriends} />
+            {selectedFriend && friends.length > 0 && (
+              <BillForm
+                selectedFriend={selectedFriend}
+                updateFriendTotal={updateFriendTotal}
+              />
+            )}
           </div>
         </div>
       </div>

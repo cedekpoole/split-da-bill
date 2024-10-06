@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export default function BillForm() {
-  const [billTotal, setBillTotal] = useState(0);
-  const [ownExpense, setOwnExpense] = useState(0);
+export default function BillForm({ selectedFriend, updateFriendTotal }) {
+  const [billTotal, setBillTotal] = useState();
+  const [ownExpense, setOwnExpense] = useState();
   const [paid, setPaid] = useState(null);
 
   const onFormSubmit = (e) => {
@@ -15,12 +15,18 @@ export default function BillForm() {
     ) {
       return;
     }
+
+    const friendExpense = billTotal - ownExpense;
+
+    paid === "true"
+      ? updateFriendTotal(selectedFriend.id, -friendExpense)
+      : updateFriendTotal(selectedFriend.id, friendExpense);
   };
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="my-4">Bill Form</h1>
-      <form className="flex flex-col gap-4">
+      <h1 className="my-4">Split the bill with {selectedFriend.name}</h1>
+      <form className="flex flex-col gap-4" onSubmit={onFormSubmit}>
         <div className="flex justify-between items-center">
           <label htmlFor="bill-total" className="mr-4">
             Total Bill
@@ -32,7 +38,7 @@ export default function BillForm() {
             className="border rounded px-4 py-2"
             placeholder="Enter bill total"
             value={billTotal}
-            onChange={(e) => setBillTotal(e.target.value)}
+            onChange={(e) => setBillTotal(Number(e.target.value))}
             required
           />
         </div>
@@ -47,13 +53,13 @@ export default function BillForm() {
             className="border rounded px-4 py-2"
             placeholder="Enter your expense"
             value={ownExpense}
-            onChange={(e) => setOwnExpense(e.target.value)}
+            onChange={(e) => setOwnExpense(Number(e.target.value))}
             required
           />
         </div>
         <div className="flex justify-between items-center">
           <label htmlFor="friend-expense" className="mr-4">
-            Their expense
+            {`${selectedFriend.name}'s expense`}
           </label>
           <input
             type="number"
@@ -73,8 +79,9 @@ export default function BillForm() {
             onChange={(e) => setPaid(e.target.value)}
             required
           >
+            <option value="null">Select</option>
             <option value="true">You</option>
-            <option value="false">Friend</option>
+            <option value="false">{selectedFriend.name}</option>
           </select>
         </div>
         <button
