@@ -30,11 +30,13 @@ export default function FriendForm({
 
   return (
     <div className="bg-[#f1f1f1] shadow-md rounded-lg flex flex-col">
-      <div
-        className="text-end text-2xl mr-3 cursor-pointer"
-        onClick={() => setAddFriend(!addFriend)}
-      >
-        x
+      <div className="text-end mr-3 ">
+        <span
+          className="text-2xl cursor-pointer"
+          onClick={() => setAddFriend(!addFriend)}
+        >
+          x
+        </span>
       </div>
       <form className="flex flex-col space-y-4 p-4" onSubmit={handleSubmit}>
         <div>
