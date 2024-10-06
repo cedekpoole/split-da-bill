@@ -38,26 +38,28 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto p-4 font-poppins">
-        <h1 className="text-5xl font-bold text-center my-4 font-abril">
-          Split Da Bill
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-          <div className="md:col-span-1">
-            <FriendList
-              friends={friends}
-              setFriends={setFriends}
-              selectedFriend={selectedFriend}
-              setSelectedFriend={setSelectedFriend}
-            />
-          </div>
-          <div className="md:col-span-1 lg:col-span-2">
-            {selectedFriend && friends.length > 0 && (
-              <BillForm
+      <div className="min-h-screen bg-slate-100">
+        <div className="container mx-auto p-4 font-poppins">
+          <h1 className="text-5xl font-bold text-center my-4 font-abril">
+            Split Da Bill
+          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+            <div className="md:col-span-1">
+              <FriendList
+                friends={friends}
+                setFriends={setFriends}
                 selectedFriend={selectedFriend}
-                updateFriendTotal={updateFriendTotal}
+                setSelectedFriend={setSelectedFriend}
               />
-            )}
+            </div>
+            <div className="md:col-span-1 lg:col-span-2">
+              {selectedFriend && friends.length > 0 && (
+                <BillForm
+                  selectedFriend={selectedFriend}
+                  updateFriendTotal={updateFriendTotal}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>
