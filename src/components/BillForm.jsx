@@ -25,7 +25,10 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="my-8">Split the bill with {selectedFriend.name}</h1>
+      <h1 className="my-8 text-xl font-abril">
+        Split the bill with{" "}
+        <span className="underline">{selectedFriend.name}</span>
+      </h1>
       <form className="flex flex-col gap-4" onSubmit={onFormSubmit}>
         <div className="flex justify-between items-center">
           <label htmlFor="bill-total" className="mr-4">

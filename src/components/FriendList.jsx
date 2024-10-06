@@ -19,7 +19,7 @@ export default function FriendList({
   return (
     <>
       <div className="flex flex-col gap-4 mb-4">
-        <h2 className="text-2xl ">Friends List</h2>
+        <h2 className="text-2xl font-abril">Friends List</h2>
         {friends?.length === 0 && (
           <p className="text-center text-lg mt-4 shadow-md p-4">
             No friends to display 😢 Add a friend to get started!
