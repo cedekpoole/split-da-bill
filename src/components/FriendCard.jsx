@@ -35,13 +35,13 @@ export default function FriendCard({
         </p>
       </div>
       <button
-        className="ml-auto border rounded-full w-10 h-10 hover:bg-blue-500 hover:text-[#f1f1f1]"
+        className="ml-auto mr-1 border bg-slate-200 text-2xl rounded-full w-10 h-10 hover:bg-red-400 hover:text-[#f1f1f1]"
         onClick={(e) => {
           e.stopPropagation();
           removeFriend(friend.id);
         }}
       >
-        🗑️
+        x
       </button>
     </div>
   );
