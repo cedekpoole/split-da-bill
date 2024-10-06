@@ -17,6 +17,11 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
       paid === null
     ) {
       setErrorMessage("Please enter valid values");
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
+
       return;
     }
 
