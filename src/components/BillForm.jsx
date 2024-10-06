@@ -39,7 +39,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
             name="bill-total"
             id="bill-total"
             className="border rounded px-4 py-2"
-            placeholder="Enter bill total"
+            placeholder="Enter bill total..."
             value={billTotal}
             onChange={(e) => setBillTotal(Number(e.target.value))}
             required
@@ -54,7 +54,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
             name="own-expense"
             id="own-expense"
             className="border rounded px-4 py-2"
-            placeholder="Enter your expense"
+            placeholder="Enter expense..."
             value={ownExpense}
             onChange={(e) => setOwnExpense(Number(e.target.value))}
             required
