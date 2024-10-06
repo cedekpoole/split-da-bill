@@ -29,7 +29,7 @@ export default function FriendForm({
   };
 
   return (
-    <div className="bg-slate-300 shadow-md rounded-lg flex flex-col">
+    <div className="bg-slate-200 shadow-md rounded-lg flex flex-col">
       <div className="text-end mr-4 mt-2">
         <span
           className="text-2xl cursor-pointer"
@@ -38,7 +38,7 @@ export default function FriendForm({
           x
         </span>
       </div>
-      <form className="flex flex-col space-y-4 p-4" onSubmit={handleSubmit}>
+      <form className="flex flex-col space-y-3 p-4" onSubmit={handleSubmit}>
         <div className="flex justify-start items-center">
           <label htmlFor="name" className="text-md font-semibold mr-3">
             Name:
