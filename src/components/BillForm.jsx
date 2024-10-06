@@ -88,7 +88,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
           </select>
         </div>
         <button
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-36"
+          className="bg-blue-500 text-white p-2 mt-2 rounded hover:bg-blue-600 w-36"
           onClick={onFormSubmit}
         >
           Split the bill
