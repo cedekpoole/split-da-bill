@@ -25,7 +25,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="my-4">Split the bill with {selectedFriend.name}</h1>
+      <h1 className="my-8">Split the bill with {selectedFriend.name}</h1>
       <form className="flex flex-col gap-4" onSubmit={onFormSubmit}>
         <div className="flex justify-between items-center">
           <label htmlFor="bill-total" className="mr-4">
@@ -59,7 +59,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
         </div>
         <div className="flex justify-between items-center">
           <label htmlFor="friend-expense" className="mr-4">
-            {`${selectedFriend.name}'s expense`}
+            {`${selectedFriend.name.split(" ")[0]}'s expense`}
           </label>
           <input
             type="number"
