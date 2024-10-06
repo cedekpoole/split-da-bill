@@ -7,9 +7,12 @@ export default function BillForm() {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    if (ownExpense > billTotal) {
-      return;
-    } else if (paid === null) {
+    if (
+      ownExpense > billTotal ||
+      ownExpense < 0 ||
+      billTotal < 0 ||
+      paid === null
+    ) {
       return;
     }
   };
