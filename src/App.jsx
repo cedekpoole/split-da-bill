@@ -19,7 +19,7 @@ const fakeFriends = [
     id: 3,
     name: "John Smith",
     image: "https://randomuser.me/api/portraits/women/1.jpg",
-    total: 20,
+    total: -20,
   },
 ];
 
