@@ -1,18 +1,22 @@
 import { useState } from "react";
 
 export default function BillForm({ selectedFriend, updateFriendTotal }) {
-  const [billTotal, setBillTotal] = useState();
-  const [ownExpense, setOwnExpense] = useState();
+  const [billTotal, setBillTotal] = useState("");
+  const [ownExpense, setOwnExpense] = useState("");
   const [paid, setPaid] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (
+      billTotal === "" ||
+      ownExpense === "" ||
       ownExpense > billTotal ||
       ownExpense < 0 ||
       billTotal < 0 ||
       paid === null
     ) {
+      setErrorMessage("Please enter valid values");
       return;
     }
 
@@ -21,6 +25,8 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
     paid === "true"
       ? updateFriendTotal(selectedFriend.id, -friendExpense)
       : updateFriendTotal(selectedFriend.id, friendExpense);
+
+    setErrorMessage("");
   };
 
   return (
@@ -79,6 +85,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
           </label>
           <select
             id="dropdown"
+            value={paid}
             onChange={(e) => setPaid(e.target.value)}
             required
           >
@@ -87,12 +94,19 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
             <option value="false">{selectedFriend.name}</option>
           </select>
         </div>
-        <button
-          className="bg-blue-500 text-white p-2 mt-2 rounded hover:bg-blue-600 w-36"
-          onClick={onFormSubmit}
-        >
-          Split the bill
-        </button>
+        <div className="flex justify-between mt-2">
+          <button
+            className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-36"
+            onClick={onFormSubmit}
+          >
+            Split the bill
+          </button>
+          {errorMessage && (
+            <div className="bg-red-100 text-red-700 border border-red-400 p-2  text-center rounded text-xs w-44">
+              {errorMessage}
+            </div>
+          )}
+        </div>
       </form>
     </div>
   );
