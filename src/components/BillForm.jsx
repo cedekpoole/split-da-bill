@@ -35,7 +35,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center p-2">
       <h1 className="my-8 text-xl font-abril">
         Split the bill with{" "}
         <span className="underline">{selectedFriend.name}</span>
@@ -49,7 +49,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
             type="number"
             name="bill-total"
             id="bill-total"
-            className="max-w-xs border rounded px-4 py-2"
+            className="max-w-40 sm:max-w-xs border rounded px-4 py-2"
             placeholder="Enter bill total..."
             value={billTotal}
             onChange={(e) => setBillTotal(Number(e.target.value))}
@@ -64,7 +64,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
             type="number"
             name="own-expense"
             id="own-expense"
-            className="max-w-xs border rounded px-4 py-2"
+            className="max-w-40 sm:max-w-xs border rounded px-4 py-2"
             placeholder="Enter expense..."
             value={ownExpense}
             onChange={(e) => setOwnExpense(Number(e.target.value))}
@@ -79,7 +79,7 @@ export default function BillForm({ selectedFriend, updateFriendTotal }) {
             type="number"
             name="friend-expense"
             id="friend-expense"
-            className="max-w-xs border rounded px-4 py-2"
+            className="max-w-40 sm:max-w-xs border rounded px-4 py-2"
             value={billTotal - ownExpense}
             readOnly
           />
