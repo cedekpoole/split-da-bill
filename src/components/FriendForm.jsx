@@ -46,7 +46,7 @@ export default function FriendForm({
           <input
             name="name"
             type="text"
-            className="border rounded px-4 py-1"
+            className="w-full border rounded px-4 py-1"
             placeholder="Enter friend's name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -60,7 +60,7 @@ export default function FriendForm({
           <input
             name="image"
             type="url"
-            className="border rounded px-4 py-1"
+            className="w-full border rounded px-4 py-1"
             placeholder="Enter image url"
             value={image}
             onChange={(e) => setImage(e.target.value)}
